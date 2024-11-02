@@ -46,10 +46,10 @@ Therefore, the amortized runtime per insertion using the aggregate method is **`
 
 In the accounting method, we assign "credits" to each insertion operation to cover the costs of future resizes.
 
-1. **Credit Assignment**: We assign an **amortized cost of 3 credits** to each insertion.
+1. **Cost Assignment**: We assign an **amortized cost of 3 credits** to each insertion.
    - Each regular insertion uses **1 credit** for the insertion itself and saves **2 extra credits** for future resizing.
    
-2. **Credit Usage During Resizing**: When resizing the table (doubling its capacity), we need to copy each element from the old table to the new one. The saved credits from previous insertions pay for this cost:
+2. **Cost Usage During Resizing**: When resizing the table (doubling its capacity), we need to copy each element from the old table to the new one. The saved credits from previous insertions pay for this cost:
    - For example, resizing from a capacity of `k` to `2k` involves copying `k` elements, which are covered by the 2 saved credits per element, totaling `2k` credits.
 
 **Amortized Cost per Insertion**:
